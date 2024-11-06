@@ -1,0 +1,224 @@
+/*
+  The new CSS reset - version 1.11.3 (last updated 25.08.2024)
+  GitHub page: https://github.com/elad2412/the-new-css-reset
+*/
+
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
+  all: unset;
+  display: revert;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+a,
+button {
+  cursor: revert;
+}
+
+ol,
+ul,
+menu,
+summary {
+  list-style: none;
+}
+
+ol {
+  counter-reset: revert;
+}
+
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+textarea {
+  white-space: revert;
+}
+
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+:where(pre) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: unset;
+}
+
+:where([hidden]) {
+  display: none;
+}
+
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+:where(dialog:modal) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+::-webkit-details-marker {
+  display: none;
+}
+
+/*
+  My Code
+*/
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  font-weight: 700;
+}
+
+:root {
+  --color-green: hsl(75, 94%, 57%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey-700: hsl(0, 0%, 20%);
+  --color-grey-800: hsl(0, 0%, 12%);
+  --color-grey-900: hsl(0, 0%, 8%);
+
+  --font-family: "Inter", sans-serif;
+  --font-size: 0.875rem;
+
+  --font-weight-400: 400;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+
+  background-color: var(--color-grey-900);
+  color: var(--color-white);
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-400);
+  text-align: center;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: inherit;
+}
+
+main {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  flex-basis: 30rem;
+
+  margin: 1.5rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: var(--color-grey-800);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.avatar {
+  align-self: center;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.name {
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-600);
+  letter-spacing: 0.05rem;
+}
+
+.location {
+  color: var(--color-green);
+  font-weight: var(--font-weight-700);
+}
+
+.quote::before,
+.quote::after {
+  content: '"';
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.social-link {
+  border-radius: 0.625rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-grey-700);
+  font-weight: var(--font-weight-700);
+  transition: 0.15s;
+}
+
+.social-link:hover {
+  background-color: var(--color-green);
+  color: var(--color-grey-700);
+}
+
+@media (min-width: 30rem) {
+  .profile {
+    margin: 3rem;
+    padding: 3rem;
+  }
+}
